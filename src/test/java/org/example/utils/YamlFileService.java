@@ -16,15 +16,14 @@ public class YamlFileService {
         return instance;
     }
 
-    public HashMap<String, Object>  getYamlObjectMap(ENVType env, String dataFile) {
+    public HashMap<String, Object>  getYamlObjectMap(String dataFile) {
         HashMap<String, Object> objectMap = new HashMap<String, Object>();
         try {
             Yaml yaml = new Yaml();
-            String fileLocation = "./data/" + env.name().toLowerCase() + "/" + dataFile;
-            InputStream inputStream = new FileInputStream(fileLocation);
+            InputStream inputStream = new FileInputStream(dataFile);
             objectMap = yaml.load(inputStream);
             inputStream.close();
-            Log.info("Data file loaded - dataFile");
+            Log.info("Data file loaded - dataFile : " + dataFile);
             Log.info(objectMap.toString());
             return objectMap;
         }

@@ -6,7 +6,7 @@
     <parameter name="BROWSER" value="chrome" />
     <test name="LoginTest">
         <classes>
-            <class name="org.example.tests.LoginTest"/>
+            <class name="org.example.tests.LandingPageTest"/>
         </classes>
     </test>
 </suite>

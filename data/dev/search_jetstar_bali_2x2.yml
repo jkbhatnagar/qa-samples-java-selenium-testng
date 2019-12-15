@@ -1,10 +1,7 @@
-windowheight:
-windowwidth:
-timeoutoverride:
 startlocation: "Sydney"
 finishlocation: "Bali"
-startdate: "1"
-finishdate: "3"
+startdate: "21"
+finishdate: "24"
 selectflightby: "Cheapest"
 numberofadults: 2
 numberofkids: 2

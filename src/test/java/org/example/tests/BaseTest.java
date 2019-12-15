@@ -21,9 +21,9 @@ public class BaseTest extends EnvService {
         Log.info("# Setup.");
         setEnvironment(envParam, browserParam);
         driver = getDriver();
-        driver.get(APPURL);
         driver.manage().timeouts().implicitlyWait(IMPLICIT_TIME, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        driver.get(APPURL);
     }
 
     @AfterSuite

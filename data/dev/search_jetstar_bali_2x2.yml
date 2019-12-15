@@ -1,0 +1,25 @@
+windowheight:
+windowwidth:
+timeoutoverride:
+startlocation: "Sydney"
+finishlocation: "Bali"
+startdate: "1"
+finishdate: "3"
+selectflightby: "Cheapest"
+numberofadults: 2
+numberofkids: 2
+numberofinfants: 0
+firstname: 2
+lastName: "Doe"
+age: 31
+contactDetails:
+   - type: "mobile"
+     number: 0411111111
+   - type: "email"
+     number: abc@someabcemail.com
+homeAddress:
+   address1: "Level 2, 320 Pitt Street"
+   address2: ""
+   city: "Sydney"
+   state: "NSW"
+   pin: 2000

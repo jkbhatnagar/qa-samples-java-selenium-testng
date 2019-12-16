@@ -1,14 +1,10 @@
 package org.example.Listeners;
 
-import com.influxdb.client.domain.WritePrecision;
-import com.influxdb.client.write.Point;
-import org.example.utils.Log;
 import org.example.utils.ResultSender;
+import org.influxdb.dto.Point;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
 public class ExecutionListener implements ITestListener {
@@ -42,31 +38,24 @@ public class ExecutionListener implements ITestListener {
     }
 
     private void sendTestMethodStatus(ITestResult iTestResult, String status) {
-        Log.info("JATIN:" + "REPORT STATUS");
-        Log.info("JATIN:" + iTestResult.getTestClass().getName());
-        Log.info("JATIN:" + iTestResult.getName());
-        Log.info("JATIN:" + iTestResult.getMethod().getDescription());
-        Log.info("JATIN:" + status);
-        Log.info("JATIN:" + iTestResult.getEndMillis());
-        Log.info("JATIN:" + iTestResult.getStartMillis());
-
-        Point point = Point.measurement("testmethod")
-                .time(Instant.now().toEpochMilli(), WritePrecision.MS)
-                .addTag("testclass", iTestResult.getTestClass().getName())
-                .addTag("name", iTestResult.getName())
-//                .addTag("description", iTestResult.getMethod().getDescription())
-                .addTag("result", status)
-                .addField("duration", (iTestResult.getEndMillis() - iTestResult.getStartMillis()));
-        ResultSender.send(point);
+//        Point point = Point.measurement("testmethod")
+//                .time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
+//                .tag("testclass", iTestResult.getTestClass().getName())
+//                .tag("name", iTestResult.getName())
+////                .tag("description", iTestResult.getMethod().getDescription())
+//                .tag("result", status)
+//                .addField("duration", (iTestResult.getEndMillis() - iTestResult.getStartMillis()))
+//                .build();
+//        ResultSender.send(point);
     }
 
     private void sendTestClassStatus(ITestContext iTestContext) {
-        Point point = Point.measurement("testclass")
-                .time(Instant.now().toEpochMilli(), WritePrecision.MS)
-                .addTag("name", iTestContext.getAllTestMethods()[0].getTestClass().getName())
-                .addField("duration", (iTestContext.getEndDate().getTime() - iTestContext.getStartDate().getTime()));
-
-        ResultSender.send(point);
+//        Point point = Point.measurement("testclass")
+//                .time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
+//                .tag("name", iTestContext.getAllTestMethods()[0].getTestClass().getName())
+//                .addField("duration", (iTestContext.getEndDate().getTime() - iTestContext.getStartDate().getTime()))
+//                .build();
+//        ResultSender.send(point);
     }
 
 }
